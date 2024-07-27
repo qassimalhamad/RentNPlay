@@ -28,6 +28,13 @@ router.post('/sign-up' , async (req , res , next) => {{
 
     const user = await User.create(req.body);
     res.send(`Thanks for signing up ${user.username}`)
+
+    req.session.user= {
+        username : userInDatabase.username,
+    };
+    req.session.save( ()=>{
+        res.redirect('/')
+    })
 }})
 
 
@@ -56,8 +63,7 @@ router.post('/sign-in' , async (req , res , next) => {
         username : userInDatabase.username,
     };
 
-    res.redirect('/')
-
+        res.redirect('/')
 })
 
 router.get('/sign-out' , (req , res , next) => {
