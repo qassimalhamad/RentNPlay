@@ -9,7 +9,8 @@ const methodOverride = require('method-override')
 const morgan = require('morgan')
 
 
-const authCtrl = require('./controllers/auth')
+const authCtrl = require('./controllers/auth');
+const session = require('express-session');
 
 
 // let port;
@@ -33,13 +34,25 @@ app.use(express.urlencoded({extended : false}))
 app.use(methodOverride('_method'))
 app.use(morgan('dev'))
 
+app.use(session({
+    secret: process.env.SESSION_SECRET,
+    resave: false,
+    saveUninitialized: true,
+
+}))
+
+
 app.use('/auth' , authCtrl) // means if the website has an /auth it will use the authCtrl
+
 
 // Routes
 
 
 app.get('/' , async (req , res , next) => {
-    res.render('index.ejs')
+    res.render('index.ejs' , {
+        user: req.session.user,
+    }) 
+
 })
 
 
@@ -48,3 +61,4 @@ app.get('/' , async (req , res , next) => {
 app.listen(port , () => {
     console.log(`The Express app is working on port ${port}!`)
 })
+
