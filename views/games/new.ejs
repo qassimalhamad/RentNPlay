@@ -1,0 +1,29 @@
+<!-- views/applications/new.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add a New App</title>
+</head>
+  <body>
+    <%- include('../partials/_navbar.ejs') %>
+    <h1>Add New Game</h1>
+
+    <form action="/users/<%= user._id %>/games" method="POST">
+        <label for="game">Game:</label>
+        <input type="text" name="game" id="game">
+        
+        <label for="price">Price:</label>
+        <input type="text" name="price" id="price">
+        
+        <label for="purchaseType">Purchase Type:</label>
+        <select id="purchaseType" name="purchaseType">
+          <option value="sell">For Sale</option>
+          <option value="rent">For Rent</option>
+        </select>
+        <button type="submit">Add Game</button>
+    </form>
+  </body>
+</html>

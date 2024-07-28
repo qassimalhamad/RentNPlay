@@ -3,23 +3,17 @@ const dotenv = require('dotenv');
 dotenv.config();
 const express = require('express')
 const app = express();
-
+const session = require('express-session');
 const mongoose = require('mongoose')
 const methodOverride = require('method-override')
 const morgan = require('morgan')
 
+const isSignedIn = require('./middleware/is-signed-in.js');
+const passUserToView = require('./middleware/pass-user-to-view.js');
 
-const authCtrl = require('./controllers/auth');
-const session = require('express-session');
-
-
-// let port;
-
-// if(process.env.PORT){
-//     port = process.env.PORT
-// }else{
-//     port = 3000;
-// }
+//Controllers
+const authCtrl = require('./controllers/auth.js')
+const gamesCtrl = require('./controllers/games.js')
 
 const port = process.env.PORT ? process.env.PORT : '3000';
 
@@ -41,19 +35,26 @@ app.use(session({
 
 }))
 
+app.use(passUserToView);
 
-app.use('/auth' , authCtrl) // means if the website has an /auth it will use the authCtrl
+app.get('/' , async (req , res , next) => {
+    if(req.session.user){
+        res.redirect(`/users/${req.session.user._id}/games`)
+    }else{
+        res.render('index.ejs')
+    }
+     
 
+})
+
+app.use('/auth' , authCtrl) 
+app.use('/games', gamesCtrl )
+
+app.use(isSignedIn);
+app.use('/users/:userId/games', gamesCtrl); 
 
 // Routes
 
-
-app.get('/' , async (req , res , next) => {
-    res.render('index.ejs' , {
-        user: req.session.user,
-    }) 
-
-})
 
 
 

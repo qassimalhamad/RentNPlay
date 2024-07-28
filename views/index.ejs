@@ -6,11 +6,9 @@
     <title>Home Page!</title>
 </head>
 <body>
-    <h1>Welcome to RentNPlay </h1>
-
-    <a href="/auth/sign-up">Sign Up</a>
-    <a href="/auth/sign-in">Sign In</a>
-    <a href="/auth/sign-out">Sign Out</a>
+    <%- include('./partials/_navbar.ejs') %>
+    <h1>RentNPlay </h1>
+    <p>Buy or Rent Your Game and Play!</p>
 
     <%if(user){%>
         <h1>Welcome <%= user.username %></h1>
