@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,20 +9,26 @@
 <body>
 
     <%- include('../partials/_navbar.ejs') %>
-    <h1>All Games</h1>
-    <a href="/users/<%=user._id%>/games/new">Add an Game</a> 
-    <a href="/users/<%=user._id%>/games/allgames">My Games</a> 
 
-    <ul>
-        <% games.forEach((game)=>{ %>
-          <a href="/users/<%= user._id %>/games/<%= game._id %>">
-           <li><%= game.game %> </li> 
-          </a>
-          <!-- <li>Price: <%= game.price %> Purchase Type: <%= game.purchaseType %></li> -->
-        <% }) %>
-    </ul>
-  
+    <main class="main-content">
+        <h1>Games</h1>
+        <div class="links-container">
+            <a href="/users/<%=user._id%>/games/new">Add a Game</a> 
+            <a href="/users/<%=user._id%>/games/allgames">My Games</a> 
+        </div>
 
+        <ul class="games-list">
+            <% games.forEach((game)=>{ %>
+                <li class="game-item">
+                    <div class="game-container">
+                        <p class="game-name"><%= game.game %></p>
+                        <p class="game-price">Price: <%= game.price %></p>
+                        <p class="game-purchase-type">Purchase Type: <%= game.purchaseType %></p>
+                    </div>
+                </li>
+            <% }) %>
+        </ul>
+    </main>
 
 </body>
 </html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <title>Editing <%= game.game %></title>
+</head>
+<body>
+    <%- include('../partials/_navbar.ejs') %>
+    <main class="main-content">
+        <h1>Editing <%= game.game %></h1>
+        <div class="edit-form-container">
+            <form action="/users/<%= user._id %>/games/<%= game._id %>?_method=PUT" method="POST" class="edit-form">
+                <label for="game">Game:</label>
+                <input type="text" name="game" id="game" value="<%= game.game %>">
+                
+                <label for="price">Price:</label>
+                <input type="text" name="price" id="price" value="<%= game.price %>">
+                
+                <label for="purchaseType">Purchase Type:</label>
+                <select id="purchaseType" name="purchaseType">
+                    <option value="sell" <%= game.purchaseType === 'sell' ? 'selected' : '' %>>For Sale</option>
+                    <option value="rent" <%= game.purchaseType === 'rent' ? 'selected' : '' %>>For Rent</option>
+                </select>
+                <button type="submit">Edit Game</button>
+            </form>
+        </div>
+    </main>
+</body>
+</html>

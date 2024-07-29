@@ -8,7 +8,8 @@
 </head>
 <body>
     <%- include('../partials/_navbar.ejs') %>
-    <form action="/auth/sign-up" method="POST">
+    <div class="form-container">
+    <form action="/auth/sign-up" method="POST" class="sign-form">
         <label for="username">User</label>
         <input type="text" name="username" id="username">
 
@@ -20,7 +21,7 @@
 
         <button type="submit">Sign Up</button>
 
-
+    </form>
 
     </form>
 </body>

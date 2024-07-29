@@ -1,10 +1,329 @@
-body{
-    background: linear-gradient(109.6deg, rgb(223, 234, 247) 11.2%, rgb(244, 248, 252) 91.1%);
+/* Existing styles */
+
+body {
+    background-color: #00215E;
 }
 
-nav{
+.nav-content {
     display: flex;
-    justify-content: flex-start;
-    background-color: antiquewhite;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2C4E80;
+    width: 100%;
+}
+
+.site-name {
+    color: #FC4100;
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 7px;
+}
+
+.nav-links {
+    display: flex;
     gap: 10px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    font-size: 16px;
+}
+
+#rentnplay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FC4100;
+}
+
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 60px); /* Subtract the navbar height */
+}
+
+.sign-form {
+    background-color: #f1f1f1;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sign-form label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.sign-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.sign-form button {
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.sign-form button:hover {
+    background-color: #45a049;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+}
+
+#rentnplay {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+#description {
+    font-size: 1.2rem;
+    max-width: 600px;
+    color: white;
+    text-align: center;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border: 2px solid #2C4E80;
+    background-color: #1F3D66;
+    border-radius: 5px;
+    margin: 0 auto; /* Center the description box */
+}
+
+h1 {
+    color: #FC4100;
+    font-size: 24px;
+    margin: 20px 0;
+}
+
+a {
+    color: #FC4100;
+    text-decoration: none;
+    font-size: 18px;
+    margin: 10px;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+ul li {
+    margin: 10px 0;
+}
+
+/* Styles for the game cards */
+.games-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0;
+}
+
+.game-item {
+    margin: 10px;
+    width: 250px; /* Adjust width as needed */
+}
+
+.game-link {
+    text-decoration: none;
+}
+
+.game-container {
+    background-color: #1F3D66;
+    color: white;
+    padding: 15px;
+    border: 1px solid #2C4E80;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.game-name {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Optional additional styles */
+.game-container:hover {
+    background-color: #2C4E80;
+    cursor: pointer;
+}
+
+/* Additional styles for the edit form */
+.edit-form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 60px); /* Adjust for navbar height */
+}
+
+.edit-form {
+    background-color: #f1f1f1;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.edit-form label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #333;
+    text-align: left;
+    width: 100%;
+}
+
+.edit-form input,
+.edit-form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.edit-form button {
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.edit-form button:hover {
+    background-color: #45a049;
+}
+
+/* Styles for the show page */
+.show-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    padding: 20px;
+}
+
+.show-page h1 {
+    color: #FC4100;
+    font-size: 24px;
+    margin: 20px 0;
+}
+
+.show-page h2 {
+    color: white;
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+.show-page a,
+.show-page button {
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 10px;
+}
+
+.show-page a:hover,
+.show-page button:hover {
+    background-color: #45a049;
+}
+
+.show-page form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Styles for the add new game page */
+.add-game-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    padding: 20px;
+}
+
+.add-game-page h1 {
+    color: #FC4100;
+    font-size: 24px;
+    margin: 20px 0;
+}
+
+.add-game-form {
+    background-color: #1F3D66;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.add-game-form label {
+    color: white;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.add-game-form input,
+.add-game-form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.add-game-form button {
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.add-game-form button:hover {
+    background-color: #45a049;
 }
