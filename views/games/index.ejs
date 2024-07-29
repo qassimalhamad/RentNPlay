@@ -1,19 +1,27 @@
-<!-- views/applications/index.ejs -->
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Your Games</title>
+  <link rel="stylesheet" href="/stylesheets/style.css" />
+  <title>My Games</title>
 </head>
 <body>
 
     <%- include('../partials/_navbar.ejs') %>
-    <h1>Your Apps</h1>
-    <a href="/users/<%=user._id%>/games/new">Add an Game</a>
+    <h1>All Games</h1>
+    <a href="/users/<%=user._id%>/games/new">Add an Game</a> 
+    <a href="/users/<%=user._id%>/games/allgames">My Games</a> 
 
-
+    <ul>
+        <% games.forEach((game)=>{ %>
+          <a href="/users/<%= user._id %>/games/<%= game._id %>">
+           <li><%= game.game %> </li> 
+          </a>
+          <!-- <li>Price: <%= game.price %> Purchase Type: <%= game.purchaseType %></li> -->
+        <% }) %>
+    </ul>
   
 
 

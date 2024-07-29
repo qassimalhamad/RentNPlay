@@ -12,7 +12,7 @@ const gameSchema = new mongoose.Schema({
 
     purchaseType : {
         type : String ,
-        enum: ['sell ', 'rent'] ,
+        enum: ['sell', 'rent' , 'sold' , 'rented'] , //Has mistake, there was a space in the sell 
     }
 
 })

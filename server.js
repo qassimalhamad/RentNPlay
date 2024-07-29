@@ -7,7 +7,7 @@ const session = require('express-session');
 const mongoose = require('mongoose')
 const methodOverride = require('method-override')
 const morgan = require('morgan')
-
+const path = require('path');
 const isSignedIn = require('./middleware/is-signed-in.js');
 const passUserToView = require('./middleware/pass-user-to-view.js');
 
@@ -16,6 +16,7 @@ const authCtrl = require('./controllers/auth.js')
 const gamesCtrl = require('./controllers/games.js')
 
 const port = process.env.PORT ? process.env.PORT : '3000';
+
 
 mongoose.connect(process.env.MONGODB_URI);
 
@@ -27,6 +28,9 @@ mongoose.connection.on('connected', ()=>{
 app.use(express.urlencoded({extended : false}))
 app.use(methodOverride('_method'))
 app.use(morgan('dev'))
+
+
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(session({
     secret: process.env.SESSION_SECRET,
@@ -47,8 +51,11 @@ app.get('/' , async (req , res , next) => {
 
 })
 
+
+
 app.use('/auth' , authCtrl) 
 app.use('/games', gamesCtrl )
+
 
 app.use(isSignedIn);
 app.use('/users/:userId/games', gamesCtrl); 
@@ -62,4 +69,5 @@ app.use('/users/:userId/games', gamesCtrl);
 app.listen(port , () => {
     console.log(`The Express app is working on port ${port}!`)
 })
+
 
