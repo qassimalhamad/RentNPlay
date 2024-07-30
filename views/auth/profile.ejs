@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <title>Update Password</title>
+</head>
+<body>
+    <%- include('../partials/_navbar.ejs') %>
+    <div class="form-container">
+        <form action="/auth/profile" method="POST" class="edit-form">
+            <label for="username">User</label>
+            <input type="text" name="username" id="username" value="<%= user.username %>" readonly>
+
+            <label for="oldPassword">Old Password</label>
+            <input type="password" name="oldPassword" id="oldPassword" required>
+
+            <label for="newPassword">New Password</label>
+            <input type="password" name="newPassword" id="newPassword" required>
+
+            <label for="confirmNewPassword">Confirm New Password</label>
+            <input type="password" name="confirmNewPassword" id="confirmNewPassword" required>
+
+            <button type="submit">Update Password</button>
+        </form>
+    </div>
+</body>
+</html>

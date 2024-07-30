@@ -47,7 +47,7 @@ router.post('/sign-in', async (req, res) => {
 
     const userInDatabase = await User.findOne({ username: req.body.username });
     if (!userInDatabase) {
-      return res.send('Login failed. Please try again.');
+      return res.send('User Not in Database.');
     }
   
     const validPassword = bcrypt.compareSync(
@@ -55,7 +55,7 @@ router.post('/sign-in', async (req, res) => {
       userInDatabase.password
     );
     if (!validPassword) {
-      return res.send('Login failed. Please try again.');
+      return res.send(' Invalid password.');
     }
   
     req.session.user = {
@@ -63,6 +63,51 @@ router.post('/sign-in', async (req, res) => {
       _id: userInDatabase._id
     };
   
+    res.redirect('/');
+  } catch (error) {
+    console.log(error);
+    res.redirect('/');
+  }
+});
+
+router.get('/profile', async (req, res, next) => {
+  if (!req.session.user) {
+    return res.redirect('/auth/sign-in');
+  }
+
+  try {
+    const user = await User.findById(req.session.user._id);
+    res.render('auth/profile.ejs', { user });
+  } catch (error) {
+    console.log(error);
+    res.redirect('/');
+  }
+});
+
+
+
+router.post('/profile', async (req, res, next) => {
+  if (!req.session.user) {
+    return res.redirect('auth/sign-in');
+  }
+
+  try {
+    const user = await User.findById(req.session.user._id);
+
+    const validOldPassword = bcrypt.compareSync(req.body.oldPassword, user.password);
+    if (!validOldPassword) {
+      return res.send('Invalid old password.');
+    }
+
+    if (req.body.newPassword !== req.body.confirmNewPassword) {
+      return res.send('New Password and Confirm New Password must match.');
+    }
+
+    const hashedNewPassword = bcrypt.hashSync(req.body.newPassword, 10);
+    user.password = hashedNewPassword;
+
+    await user.save();
+
     res.redirect('/');
   } catch (error) {
     console.log(error);

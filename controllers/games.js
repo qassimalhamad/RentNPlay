@@ -4,20 +4,6 @@ const router = express.Router();
 const User = require('../models/user.js');
 
 
-
-// router.get('/', async (req, res) => {
-
-//     try {
-//         const users = await User.findById(req.session.user._id);
-//         res.render('games/index.ejs' , {
-//             games : currentUser.games,
-//         })
-//     } catch (error) {
-//       console.log(error)
-//       res.redirect('/')
-//     }
-//   });
-
 router.get('/', async (req, res) => {
   try {
     const users = await User.find({}, 'games');
@@ -133,7 +119,6 @@ router.get('/:gameId/edit', async (req, res) => {
   }
 });
 
-// controllers/games.js`
 
 router.put('/:gameId', async (req, res) => {
   try {
@@ -149,14 +134,6 @@ router.put('/:gameId', async (req, res) => {
     res.redirect('/')
   }
 });
-
-// router.get('/profile' ,async(req , res, next ) => {
-//   try {
-//     const currentUser = await User.findById(req.session)
-//   } catch (error) {
-    
-//   }
-// })
 
 
 module.exports = router;
