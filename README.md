@@ -31,10 +31,10 @@
 7. **Profile Management**: Go to your profile to update your username, password, and contact information.
     ![alt text](./Images/Image6.png)
 ## Future Updates
-- [X] Users can upload images for their game listings.
-- [X] Added a back button to navigate to the previous page.
-- [ ] CSS Upgrade.
-- [ ] Categorization of games.
+- [] Users can upload images for their game listings.
+- [] Added a back button to navigate to the previous page.
+- [X] CSS Upgrade.
+- [X] Categorization of games.
 
 ## Useful Links
 - [Images](https://gemini.google.com/)
