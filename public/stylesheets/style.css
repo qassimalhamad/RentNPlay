@@ -327,7 +327,6 @@ ul li {
 .add-game-form button:hover {
     background-color: #45a049;
 }
-
 /* Media Query for iPhone 12 */
 @media (max-width: 390px) {
     body {
@@ -335,30 +334,28 @@ ul li {
     }
 
     .nav-content {
-        flex-direction: column;
-        align-items: flex-start;
+        flex-direction: row; /* Keep the nav bar horizontal */
+        align-items: center;
+        justify-content: space-between;
         padding: 10px;
     }
 
     .site-name {
-        font-size: 18px;
+        font-size: 16px; /* Adjust the font size */
         margin-left: 0;
-        margin-bottom: 10px;
     }
 
     .nav-links {
         display: flex;
-        flex-direction: column;
+        flex-direction: row; /* Keep links in a row */
         gap: 5px;
-        width: 100%;
-        align-items: flex-start;
+        width: auto;
     }
 
     .nav-links a {
-        font-size: 14px;
-        padding: 8px;
-        width: 100%;
-        text-align: left;
+        font-size: 12px; /* Adjust the font size */
+        padding: 5px 8px; /* Adjust the padding */
+        text-align: center;
     }
 
     .form-container, .edit-form-container, .add-game-page {
