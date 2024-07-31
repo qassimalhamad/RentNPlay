@@ -6,18 +6,10 @@ const User = require('../models/user.js');
 
 router.get('/', async (req, res) => {
   try {
+    const currentUser = await User.findById(req.session.user._id);
     const users = await User.find({}, 'games');
 
-    const allGames = [];
-    users.forEach(user => {
-      user.games.forEach(game => {
-        allGames.push(game);
-      });
-    });
-
-    res.render('games/index.ejs', {
-      games: allGames
-    });
+    res.render('games/index.ejs' , {users , currentUser})
   } catch (error) {
     console.log(error);
     res.redirect('/');
@@ -49,6 +41,17 @@ router.get('/allgames' , async (req, res , next) => {
   } catch (error) {
     console.log(error)
     res.redirect('/')
+  }
+})
+
+router.get('/index', async (req, res, next) => {
+  try {
+    const currentUser = await User.findById(req.session.user._id)
+    const users = await User.find({}, 'games');
+    res.render('games/index.ejs' , {users , currentUser})
+
+  } catch (err) {
+    console.log(err.message)
   }
 })
 

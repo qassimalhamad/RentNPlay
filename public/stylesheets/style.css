@@ -47,10 +47,10 @@ body {
 
 .sign-form {
     background-color: #f1f1f1;
-    padding: 20px;
+    padding: 15px; /* Reduced padding */
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 300px;
+    width: 250px; /* Reduced width */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -58,13 +58,13 @@ body {
 
 .sign-form label {
     display: block;
-    margin-bottom: 10px;
+    margin-bottom: 5px; /* Reduced margin */
 }
 
 .sign-form input {
     width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
+    padding: 8px; /* Reduced padding */
+    margin-bottom: 15px; /* Reduced margin */
     border: 1px solid #ccc;
     border-radius: 5px;
 }
@@ -73,7 +73,7 @@ body {
     background-color: #4CAF50;
     color: #fff;
     border: none;
-    padding: 10px 20px;
+    padding: 8px 15px; /* Reduced padding */
     border-radius: 5px;
     cursor: pointer;
 }
@@ -185,10 +185,10 @@ ul li {
 
 .edit-form {
     background-color: #f1f1f1;
-    padding: 20px;
+    padding: 15px; /* Reduced padding */
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 300px;
+    width: 250px; /* Reduced width */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -196,7 +196,7 @@ ul li {
 
 .edit-form label {
     display: block;
-    margin-bottom: 10px;
+    margin-bottom: 5px; /* Reduced margin */
     font-size: 16px;
     color: #333;
     text-align: left;
@@ -206,8 +206,8 @@ ul li {
 .edit-form input,
 .edit-form select {
     width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
+    padding: 8px; /* Reduced padding */
+    margin-bottom: 15px; /* Reduced margin */
     border: 1px solid #ccc;
     border-radius: 5px;
 }
@@ -216,7 +216,7 @@ ul li {
     background-color: #4CAF50;
     color: #fff;
     border: none;
-    padding: 10px 20px;
+    padding: 8px 15px; /* Reduced padding */
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
@@ -291,10 +291,10 @@ ul li {
 
 .add-game-form {
     background-color: #1F3D66;
-    padding: 20px;
+    padding: 15px; /* Reduced padding */
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 300px;
+    width: 250px; /* Reduced width */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -303,14 +303,14 @@ ul li {
 .add-game-form label {
     color: white;
     font-size: 16px;
-    margin-bottom: 5px;
+    margin-bottom: 5px; /* Reduced margin */
 }
 
 .add-game-form input,
 .add-game-form select {
     width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
+    padding: 8px; /* Reduced padding */
+    margin-bottom: 15px; /* Reduced margin */
     border: 1px solid #ccc;
     border-radius: 5px;
 }
@@ -319,7 +319,7 @@ ul li {
     background-color: #4CAF50;
     color: #fff;
     border: none;
-    padding: 10px 20px;
+    padding: 8px 15px; /* Reduced padding */
     border-radius: 5px;
     cursor: pointer;
 }

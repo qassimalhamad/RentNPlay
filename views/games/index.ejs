@@ -18,14 +18,16 @@
         </div>
 
         <ul class="games-list">
-            <% games.forEach((game)=>{ %>
-                <li class="game-item">
-                    <div class="game-container">
-                        <p class="game-name"><%= game.game %></p>
-                        <p class="game-price">Price: <%= game.price %></p>
-                        <p class="game-purchase-type">Purchase Type: <%= game.purchaseType %></p>
-                    </div>
-                </li>
+            <% users.forEach((user)=>{ %>
+               <%  user.games.forEach(game => { %> 
+                    <li class="game-item">
+                        <div class="game-container">
+                            <p class="game-name"><%= game.game %></p>
+                            <p class="game-price">Price: <%= game.price %></p>
+                            <p class="game-purchase-type">Purchase Type: <%= game.purchaseType %></p>
+                        </div>
+                    </li>
+                    <%  })%> 
             <% }) %>
         </ul>
     </main>

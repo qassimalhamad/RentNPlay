@@ -1,12 +1,15 @@
 <nav>
-    <div class="nav-content">
+  <div class="nav-content">
       <div class="site-name">RentNPlay</div>
       <div class="nav-links">
-        <a href="/auth/sign-out">Sign Out</a>
-        <a href="/auth/sign-in">Sign In</a>
-        <a href="/auth/sign-up">Sign Up</a>
-        <a href="/auth/profile">Profile</a>
+          <% if(user) { %>
+          <a href="/games/index">Home</a>
+          <a href="/auth/sign-out">Sign Out</a>
+          <a href="/auth/profile">Profile</a>
+          <% } else { %>
+          <a href="/auth/sign-in">Sign In</a>
+          <a href="/auth/sign-up">Sign Up</a>
+          <% } %>
       </div>
-    </div>
-  </nav>
-  
+  </div>
+</nav>

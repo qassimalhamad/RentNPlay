@@ -29,7 +29,7 @@ const userSchema = new mongoose.Schema({
 
     contact : {
         type : String ,
-        required : false ,
+        required : true ,
     },
 
     games: [gameSchema]
