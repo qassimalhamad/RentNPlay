@@ -327,3 +327,130 @@ ul li {
 .add-game-form button:hover {
     background-color: #45a049;
 }
+
+/* Media Query for iPhone 12 */
+@media (max-width: 390px) {
+    body {
+        background-color: #00215E;
+    }
+
+    .nav-content {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+    }
+
+    .site-name {
+        font-size: 18px;
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        width: 100%;
+        align-items: flex-start;
+    }
+
+    .nav-links a {
+        font-size: 14px;
+        padding: 8px;
+        width: 100%;
+        text-align: left;
+    }
+
+    .form-container, .edit-form-container, .add-game-page {
+        height: auto;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .sign-form, .edit-form, .add-game-form {
+        width: 90%;
+        max-width: 320px;
+        padding: 10px;
+        margin: 0 auto;
+    }
+
+    .sign-form input, .edit-form input, .edit-form select, .add-game-form input, .add-game-form select {
+        padding: 6px;
+        margin-bottom: 10px;
+    }
+
+    .sign-form button, .edit-form button, .add-game-form button {
+        padding: 6px 12px;
+        font-size: 14px;
+    }
+
+    .main-content {
+        padding: 1rem;
+    }
+
+    #rentnplay {
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+    }
+
+    #description {
+        font-size: 1rem;
+        padding: 8px;
+    }
+
+    h1 {
+        font-size: 20px;
+        margin: 10px 0;
+    }
+
+    a {
+        font-size: 16px;
+        margin: 5px;
+    }
+
+    .games-list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .game-item {
+        width: 100%;
+        max-width: 300px;
+        margin: 5px 0;
+    }
+
+    .show-page, .add-game-page {
+        padding: 10px;
+    }
+
+    .show-page h1, .add-game-page h1 {
+        font-size: 20px;
+        margin: 10px 0;
+    }
+
+    .show-page h2 {
+        font-size: 18px;
+        margin: 8px 0;
+    }
+
+    .show-page a, .show-page button {
+        font-size: 14px;
+        padding: 8px 15px;
+        margin: 8px;
+    }
+
+    .show-page form {
+        width: 100%;
+        padding: 10px;
+    }
+
+    ul {
+        padding-left: 20px; /* Add left padding for better list readability */
+    }
+
+    ul li {
+        font-size: 14px; /* Reduce font size for list items */
+    }
+}
