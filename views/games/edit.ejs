@@ -23,8 +23,10 @@
                 
                 <label for="purchaseType">Purchase Type:</label>
                 <select id="purchaseType" name="purchaseType" required>
-                    <option value="sell" <%= game.purchaseType === 'sell' ? 'selected' : '' %>>For Sale</option>
-                    <option value="rent" <%= game.purchaseType === 'rent' ? 'selected' : '' %>>For Rent</option>
+                    <option value="SELL" <%= game.purchaseType === 'SELL' ? 'selected' : '' %>>For Sale</option>
+                    <option value="RENT" <%= game.purchaseType === 'RENT' ? 'selected' : '' %>>For Rent</option>
+                    <option value="SOLD" <%= game.purchaseType === 'SOLD' ? 'selected' : '' %>>Sold</option>
+                    <option value="RENTED" <%= game.purchaseType === 'RENTED' ? 'selected' : '' %>>Rented</option>
                 </select>
                 <button type="submit">Edit Game</button>
             </form>
